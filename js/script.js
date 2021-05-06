@@ -3,19 +3,19 @@ const buttonPaper = document.getElementById('button-paper');
 const buttonRock = document.getElementById('button-rock');
 const buttonScissors = document.getElementById('button-scissors');
 
-buttonRock.addEventListener('click', function(){ buttonClicked('rock'); });
-buttonPaper.addEventListener('click', function(){ buttonClicked('paper'); });
-buttonScissors.addEventListener('click', function(){ buttonClicked('scissors'); });
+buttonRock.addEventListener('click', function(){ buttonClicked('kamień'); });
+buttonPaper.addEventListener('click', function(){ buttonClicked('papier'); });
+buttonScissors.addEventListener('click', function(){ buttonClicked('nożyce'); });
 
 
     function getMoveName(argMoveId) {
     console.log('wywołano funkcję getMoveName z argumentem: ' + argMoveId);
       if (argMoveId === 1) {
-      return 'rock';
+      return 'kamień';
       } else if (argMoveId === 2) {
-        return 'paper';
+        return 'papier';
       } else if (argMoveId === 3) {
-        return 'scissors';
+        return 'nożyce';
       } else {
       printMessage('Nie znam ruchu o id ' + argMoveId + '. Zakładam, że chodziło o "kamień".');
       return 'kamień';
@@ -25,13 +25,13 @@ buttonScissors.addEventListener('click', function(){ buttonClicked('scissors'); 
 
     function displayResult(argPlayerMove, argComputerMove) {
     console.log('wywołano funkcję displayResults z argumentami: ' + argPlayerMove + ', ' + argComputerMove);
-      if (argPlayerMove === 'paper' && argComputerMove === 'rock') {
+      if (argPlayerMove === 'papier' && argComputerMove === 'kamień') {
       printMessage('Wygrywasz!');
       } 
-      else if (argPlayerMove === 'rock' && argComputerMove === 'scissors') {
+      else if (argPlayerMove === 'kamień' && argComputerMove === 'nożyce') {
         printMessage('Wygrywasz!');
       } 
-      else if (argPlayerMove === 'scissors' && argComputerMove === 'paper') {
+      else if (argPlayerMove === 'nożyce' && argComputerMove === 'papier') {
         printMessage('Wygrywasz!');
       } 
       else if (argPlayerMove === argComputerMove) {
